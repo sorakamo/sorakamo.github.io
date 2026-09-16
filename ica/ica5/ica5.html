@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Accessibility assessment</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <style> html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  background-color: #dde;
+}
+
+body {
+  width: 80%;
+  min-width: 1024px;
+  margin: 0 auto;
+}
+
+/* || typography */
+
+h1, h2, h3 {
+  font-family: 'Sonsie One', cursive;
+  color: #2a2a2a;
+}
+
+p, input, li, table, label {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: #2a2a2a;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 10px black;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+p, li, table {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+/* || header layout */
+
+nav, article, footer, .secondary {
+  background-color: rgb(255, 255, 255);
+}
+/* I changed the green to white to make it easier to look at */
+
+article, footer, .secondary {
+  padding: 10px 30px;
+}
+
+article {
+  margin-right: 10px;
+}
+
+nav {
+  height: 50px;
+  background-color: ff80ff;
+  display: flex;
+  padding: 1% 0;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  padding: 0;
+  list-style-type: none;
+  flex: 2;
+  display: flex;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  flex: 1;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+nav .search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
+
+.search input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+.search input[type="search"] {
+  flex: 3;
+}
+
+.search input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* || main layout */
+
+main {
+  display: flex;
+}
+
+article {
+  flex: 5;
+}
+
+.secondary {
+  flex: 2;
+}
+
+footer {
+  margin-top: 10px;
+}
+
+/* Table styling */
+
+table {
+  width: 100%;
+  background-color: #dde;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+th[scope="col"] {
+  border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #def;
+}
+
+/* styling content images and audio */
+
+img, audio {
+  display: block;
+  margin: 0 auto;
+}
+
+audio {
+  width: 500px;
+}
+
+/* Comments styling */
+
+.comments {
+  background-color: #def;
+  padding: 10px;
+}
+
+.show-hide {
+  cursor: pointer;
+}
+
+.comments h2 {
+  font-size: 2rem;
+}
+
+.comments font[size="6"]:nth-of-type(2) {
+  margin-bottom: 0;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+.comment-form .flex-pair {
+  display: flex;
+  padding: 0 3rem 1rem;
+}
+
+.comment-form label {
+  align-self: center;
+  flex: 2;
+  text-align: right;
+}
+
+.comment-form input {
+  margin-left: 1rem;
+  flex: 6;
+}
+
+.show-hide {
+  text-align: center;
+  width: 150px;
+}
+
+.comment-form input, .comment-form label, .show-hide {
+  font-size: 1.6rem;
+  line-height: 32px;
+}
+
+.comment-form input[type="submit"], .show-hide {
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.comment-container {
+  margin-top: 0;
+}
+
+.comment-container li {
+  list-style-type: none;
+  display: flex;
+}
+
+.comment-container li p:nth-child(1) {
+  flex: 1;
+  font-weight: bold;
+}
+
+.comment-container li p:nth-child(2) {
+  flex: 5;
+}
+</style>
+
+    <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header>
+      <h1>Welcome to our wildlife website</h1>
+    </header>
+
+    <nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Our team</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Blog</a></li>
+  </ul>
+
+  <form class="search">
+    <label for="search" class="visually-hidden">Search:</label>
+    <input type="search" name="q" id="search" placeholder="Search query">
+    <input type="submit" value="Go!">
+  </form>
+</nav>
+
+    <main>
+      <article>
+        <h2>The trouble with Bears</h2>
+        <p>By Evan Wild</p>
+        <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.</p>
+        <p>So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions, and give you a real insight into the life of the bear.</p>
+        <h3>Types of bear</h3>
+        <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
+        <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside. Different habitats encourange different behaviour however, as you'll find out below. The below table also gives you some useful facts about bears.</p>
+        <table>
+          <thead>
+
+            <tr>
+              <th scope = "col" >Bear Type</th>
+              <th scope = "col" >Coat</th>
+              <th scope = "col" >Adult size</th>
+              <th scope = "col" >Habitat</th>
+              <th scope = "col" >Lifespan</th>
+              <th scope = "col" >Diet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wild</td>
+              <td>Brown or black</td>
+              <td>1.4 to 2.8 meters</td>
+              <td>Woods and forests</td>
+              <td>25 to 28 years</td>
+              <td>Fish, meat, plants</td>
+            </tr>
+            <tr>
+              <td>Urban</td>
+              <td>North Face</td>
+              <td>18 to 22</td>
+              <td>Condos and coffee shops</td>
+              <td>20 to 32 years</td>
+              <td>Starbucks, sushi</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Habitats and Eating habits</h3>
+        <p>Wild bears eat a variety of meat, fish, fruit, nuts, and other natually growing ingredients. In general they will hunt for food themselves in woodland or rivers, but at a push they will track down their sustenance from farms or country houses. They tend to live in relative isolation, in caves, tents, or cottages.</p>
+        <img src="wild-bear.jpg" alt="Wild Bear">
+        <p>Urban (gentrified) bears on the other hand have largely abandoned the old ways. They will hunt other urban creatures if necessary (including other predators like rats and foxes), but prefer to scavenge from readily available urban food outlets like dumpsters, bins, and fast food joints. When food has proven scarce, urban bears have even been known to break into people's kitchens and steal essentials like baked beans, ready meals, and microwave ovens.</p>
+        <img src="urban-bear.jpg" alt="Urban Bear">
+        <p>Urban bears will sleep anywhere they can, from bus shelters and parks, to the toilets in McDonalds, to their own apartment.</p>
+        <h3>Mating rituals</h3>
+        <p>Bears are romantic creatures by nature, and will naturally look for a mate that they can spend the rest of their lives with. They will woo a potential suitor by making their dwelling look attractive — for example with cave paintings or a bed of reeds in the case of a wild bear, and mood lighting and a Michael Bublé CD in the case of an urban bear.</p>
+        <p>The following audio clip contains a fact file providing more details about bear mating rituals, along with samples and quotes from experts.</p>
+        <audio controls>
+          <source src="bear.mp3" type="audio/mp3">
+          <source src="bear.ogg" type="audio/ogg">
+          <p>It looks like your browser doesn't support HTML5 audio players.</p>
+        </audio>
+        <section class="transcript">
+
+        <aside>
+
+          <h3>About the author</h3>
+          <p>Evan Wild is an unemployed plumber from Doncaster, who has been really "in to" wildlife since childhood. He once went to Chester Zoo on holiday, but got ill after eating a doner kebab.</p>
+          <p>He has never seen a bear, but once read a Daily Mail article about them, and thinks they sound cool.</p>
+
+        </aside>
+        <section class="comments">
+          <button class="show-hide">Show comments</button>
+
+          <div class="comment-wrapper">
+
+            <h2>Add comment</h2>
+
+            <form class="comment-form">
+              <div class="flex-pair">
+                <label for="name">Your name:</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name">
+              </div>
+              <div class="flex-pair">
+                <label for="name">Your comment:</label>
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+              </div>
+              <div>
+                <input type="submit" value="Submit comment">
+              </div>
+            </form>
+
+            <h2>Comments</h2>
+
+            <ul class="comment-container">
+
+              <li>
+
+                <p>Bob Fossil</p>
+
+                <p>Oh I am so glad you taught me all about the big brown angry guys in the woods. With their sniffing little noses and their bad attitudes, they can sure be a menace — I was thinking of putting them all in a truck and driving them outta here. I run a zoo, you know.</p>
+
+              </li>
+
+            </ul>
+
+          </div>
+        </section>
+      </article>
+
+      <aside class="secondary">
+        <h2>Related</h2>
+
+        <ul>
+          <li><a href="#">The trouble with Bees</a></li>
+          <li><a href="#">The trouble with Otters</a></li>
+          <li><a href="#">The trouble with Penguins</a></li>
+          <li><a href="#">The trouble with Octopi</a></li>
+          <li><a href="#">The trouble with Lemurs</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <p>©Copyright 2050 by nobody. All rights reversed.</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
