@@ -1,0 +1,329 @@
+body {
+  background-color: #f5f4ef;
+  color: #222222;
+  font-family: Verdana, Geneva, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+header {
+  background-color: #171717;
+  color: white;
+  padding: 12px 20px;
+  border-bottom: 5px solid #d52b32;
+}
+
+header h1 {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header img {
+  width: 40px;
+  height: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+nav a {
+  display: block;
+  padding: 8px 15px;
+  background-color: #252525;
+  color: white;
+  text-decoration: none;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  border: 2px solid #f4c542;
+  border-radius: 5px;
+}
+
+nav {
+  background-color: #171717;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a:visited {
+  color: white;
+}
+
+nav a:hover {
+  background-color: #d52b32;
+  color: white;
+}
+
+nav a[aria-current="page"] {
+  background-color: #f4c542;
+  color: #171717;
+}
+
+nav a[aria-current="page"]:visited {
+  color: #171717;
+}
+
+main {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+h2 {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 34px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #c5242c;
+  margin-top: 0;
+}
+
+h3 {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 25px;
+  color: #195b9c;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #195b9c;
+}
+
+a:visited {
+  color: #f4c542;
+}
+
+a:hover {
+  color: #b82029;
+}
+
+a:focus-visible {
+  outline: 3px solid #195b9c;
+  outline-offset: 3px;
+}
+
+.intro h2 {
+  margin-bottom: 15px;
+}
+
+.intro {
+  padding: 25px 35px;
+}
+
+.intro p {
+  max-width: 850px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-grid article {
+  flex: 1 1 280px;
+}
+
+article {
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #dddddd;
+  border-top: 7px solid #d52b32;
+  border-radius: 8px;
+}
+
+article:nth-child(2n) {
+  border-top-color: #195b9c;
+}
+
+article:nth-child(3n) {
+  border-top-color: #e1ae16;
+}
+
+article img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+article h3 {
+  margin-bottom: 12px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.info-box {
+  background-color: white;
+  padding: 25px;
+  border-left: 7px solid #195b9c;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+aside {
+  background-color: #e8edf4;
+  padding: 25px;
+  border-left: 7px solid #f4c542;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.info-box img,
+aside img {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.staff-heading {
+  margin-top: 35px;
+}
+
+footer {
+  background-color: #171717;
+  color: white;
+  padding: 25px;
+  text-align: center;
+  border-top: 6px solid #195b9c;
+}
+
+footer p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Mobile Layout */
+
+@media (max-width: 600px) {
+  header {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 28px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  nav li {
+    flex: 1 1 40%;
+  }
+
+  nav a {
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  main {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .intro {
+  padding: 15px 20px;
+  }
+
+  .intro h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+  }
+
+  .intro p {
+  font-size: 14px;
+  line-height: 1.4;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  .card-grid {
+    display: block;
+  }
+
+  .card-grid article {
+    margin-bottom: 20px;
+  }
+
+  article,
+  .info-box,
+  aside {
+    padding: 18px;
+  }
+}
+
+
+.intro {
+  background-color: #f4c542;
+  padding: 20px 25px;
+  border-left: 8px solid #d52b32;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.intro h2 {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 36px;
+  color: #171717;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
