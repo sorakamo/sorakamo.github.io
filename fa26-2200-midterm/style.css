@@ -19,6 +19,22 @@ header {
   border-bottom: 5px solid #d52b32;
 }
 
+
+.card-grid h2 {
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 25px;
+  color: #195b9c;
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.staff-photo {
+  height: 240px;
+  object-fit: cover;
+  object-position: center top;
+}
+
 header h1 {
   font-family: Impact, "Arial Black", sans-serif;
   font-size: 28px;
@@ -88,6 +104,23 @@ main {
   padding: 0 20px;
 }
 
+main ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 15px;
+  row-gap: 5px;
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  list-style-type: disc;
+}
+
+main li {
+  font-size: 13px;
+  line-height: 1.4;
+  padding-left: 0;
+}
+
 section {
   margin-bottom: 35px;
 }
@@ -121,11 +154,11 @@ a {
 }
 
 a:visited {
-  color: #f4c542;
+  color: #b82029;
 }
 
 a:hover {
-  color: #b82029;
+  color: #f4c542;
 }
 
 a:focus-visible {
@@ -133,17 +166,32 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-.intro h2 {
-  margin-bottom: 15px;
-}
 
 .intro {
-  padding: 25px 35px;
+  background-color: #f4c542;
+  padding: 20px 25px;
+  border-left: 8px solid #d52b32;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.intro h1 {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 36px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #171717;
+  margin: 0 0 10px 0;
 }
 
 .intro p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
   max-width: 850px;
 }
+
 
 .card-grid {
   display: flex;
@@ -171,13 +219,16 @@ article:nth-child(3n) {
   border-top-color: #e1ae16;
 }
 
-article img {
+article img,
+.info-box img,
+aside img {
   display: block;
   width: 100%;
   max-width: 300px;
-  height: auto;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
   margin-bottom: 15px;
-  border-radius: 5px;
 }
 
 article h3 {
@@ -203,15 +254,6 @@ aside {
   border-left: 7px solid #f4c542;
   border-radius: 8px;
   margin-bottom: 30px;
-}
-
-.info-box img,
-aside img {
-  display: block;
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 15px;
 }
 
 .staff-heading {
@@ -262,11 +304,15 @@ footer p {
     padding: 0 15px;
   }
 
+  main ul {
+  grid-template-columns: 1fr;
+  }
+  
   .intro {
   padding: 15px 20px;
   }
 
-  .intro h2 {
+  .intro h1 {
   font-size: 30px;
   margin-bottom: 8px;
   }
@@ -326,4 +372,20 @@ footer p {
 
 .intro p:last-child {
   margin-bottom: 0;
+}
+
+
+/* Google Calendar */
+.calendar-embed {
+  display: block;
+  width: 100%;
+  height: 600px;
+  border: 0;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .calendar-embed {
+    height: 500px;
+  }
 }
