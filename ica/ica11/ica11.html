@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silly Story Generator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #679cff;
+      padding: 40px;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+
+    div {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 16px;
+      color: #00608d;
+      margin-right: 10px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      background-color: #dfeaff;
+      border: 2px solid #00608d;;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    fieldset {
+      border: 2px solid #00608d;;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      color: #ffa600;
+      font-weight: bold;
+    }
+
+    input[type="radio"] {
+      accent-color: #00608d;;
+      margin-right: 15px;
+    }
+
+    button {
+      background-color: #00608d;;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ffa600;
+    }
+
+    .story {
+      visibility: hidden;
+      background-color: #00608d;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <label for="custom-name">Enter custom name:</label>
+    <input id="custom-name" type="text" placeholder="" />
+  </div>
+
+  <fieldset>
+    <legend>Choose locale:</legend>
+    <label for="us">US</label>
+    <input id="us" type="radio" name="uk-us" value="us" checked />
+    <label for="uk">UK</label>
+    <input id="uk" type="radio" name="uk-us" value="uk" />
+  </fieldset>
+
+  <div>
+    <button class="generate">Generate random adventure!</button>
+  </div>
+
+  <p class="story"></p>
+
+  <script>
+
+    const customName = document.getElementById("custom-name");
+    const generateBtn = document.querySelector(".generate");
+    const story = document.querySelector(".story");
+
+    function randomValueFromArray(array) {
+      const random = Math.floor(Math.random() * array.length);
+      return array[random];
+    }
+
+    const characters = [
+      "Rick",
+      "Drunk Rick",
+      "Evil Morty"
+    ];
+
+    const places = [
+      "their house in C-137",
+      "Denny's",
+      "The Citadel",
+      "a black hole"
+    ];
+
+    const events = [
+      "use you as bait",
+      "turn you into useless Jerry",
+      "push you into the hole",
+      "kill you for fun"
+    ];
+
+    function returnRandomStoryString() {
+      const randomCharacter = randomValueFromArray(characters);
+      const randomPlace = randomValueFromArray(places);
+      const randomEvent = randomValueFromArray(events);
+
+      let storyText = `You're on an adventure with ${randomCharacter} and Morty in space and it is -455 Fahrenheit. They randomly chose to take you with them on their adventure. 
+      You are kind of nervous as this is your first adventure with ${randomCharacter} and Morty. (You're hoping there won't be an "accident" with you, while Morty lives). 
+      They take you to ${randomPlace}, planning to ${randomEvent}. 
+      Morty watched the entire thing happen and couldn't stop laughing. 
+      To make things even worse, ${randomCharacter} "accidentally" lands on you with their spaceship which weighs 900 pounds. 
+      "Oops, didn't see ya", he says. It was definitely not a successful adventure. Hopefully you're still alive!`;
+
+      return storyText;
+    }
+
+    generateBtn.addEventListener("click", generateStory);
+
+    function generateStory() {
+      let newStory = returnRandomStoryString();
+
+      if (customName.value !== "") {
+        const name = customName.value;
+        newStory = `Hi, ${name}! ` + newStory;
+      }
+
+      if (document.getElementById("uk").checked) {
+        const weight = `${Math.round(900 / 14)} stone`;
+        const temperature = `${Math.round((-455 - 32) * (5 / 9))} Celsius`;
+
+        newStory = newStory.replace("900 pounds", weight);
+        newStory = newStory.replace("-455 Fahrenheit", temperature);
+      }
+
+      story.textContent = newStory;
+      story.style.visibility = "visible";
+    }
+  </script>
+
+</body>
+</html>
